@@ -3,7 +3,7 @@ package DBIx::Simple::OO;
 use strict;
 use vars qw[$VERSION];
 
-$VERSION = 0.02;
+$VERSION = 0.03;
 
 =head1 NAME
 
@@ -56,7 +56,8 @@ full fledged objects.
 
 ### the retrieval methods are in the DBIx::Simple::Result package
 
-package DBIx::Simple::Result;
+package # hide from PAUSE
+  DBIx::Simple::Result;
 
 =head1 METHODS
 
