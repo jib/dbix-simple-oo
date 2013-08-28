@@ -1,7 +1,7 @@
 This is the README file for DBIx::Simple::OO, a module that allows
 you to retrieve database rows as objects.
 
-Please refer to 'perldoc DBIx::Simple::OO' after installation for 
+Please refer to 'perldoc DBIx::Simple::OO' after installation for
 details.
 
 #####################################################################
@@ -10,13 +10,13 @@ details.
 
 DBIx::Simple::OO
 
-    This module provides a possibility to retrieve rows from a 
+    This module provides a possibility to retrieve rows from a
     database as objects, rather than the traditional array ref
     or hash ref. This provides all the usual benefits of using
     objects over plain references for accessing data, as well as
     allowing you to add methods of your own choosing for data
     retrieval.
-    
+
 #####################################################################
 
 * Installation

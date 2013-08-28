@@ -27,9 +27,9 @@ DBIx::Simple::OO
     $age    = $obj->age;            # get the value for field 'age'
 
     @acc    = $obj->ls_accessors;   # get a list of all fields
-    $sub    = $obj->can('name');    # check if this object has a 
+    $sub    = $obj->can('name');    # check if this object has a
                                     # 'name' method
-                                    
+
     ### add a method to every object that will be returned
     ### by DBIx::Simple::OO
     {   package DBIx::Simple::OO::Item;
@@ -39,7 +39,7 @@ DBIx::Simple::OO
 
 =head1 DESCRIPTION
 
-This module provides a possibility to retrieve rows from a 
+This module provides a possibility to retrieve rows from a
 database as objects, rather than the traditional C<array ref>
 or C<hash ref>. This provides all the usual benefits of using
 objects over plain references for accessing data, as well as
@@ -84,7 +84,7 @@ Returns the results from your query as a list of objects.
 
 sub objects {
     my $self = shift or return;
- 
+
     return map { $self->_href_to_obj( $_ ) } $self->hashes;
 }
 
@@ -92,12 +92,12 @@ sub objects {
 sub _href_to_obj {
     my $self = shift or return;
     my $href = shift or return;
-    
+
     my $obj  = DBIx::Simple::OO::Item->new;
-    
+
     ### create accessors for every hash key
     $obj->mk_accessors( keys %$href );
-    
+
     ### and set the value
     for my $acc ( $obj->ls_accessors ) {
         $obj->$acc( $href->{$acc} );
@@ -108,8 +108,8 @@ sub _href_to_obj {
 
 =head1 ACCESSORS
 
-All objects returned by the above methods are from the 
-C<DBIx::Simple::OO::Item> class, which subclasses 
+All objects returned by the above methods are from the
+C<DBIx::Simple::OO::Item> class, which subclasses
 C<Object::Accessor>.
 
 The most important methods are described in the synopsis, but
@@ -117,8 +117,8 @@ you should refer to the C<Object::Accessor> manpage for more
 extensive documentation.
 
 Note that it is possible to declare methods into the
-C<DBIx::Simple::OO::Item> class to extend the functionality 
-of the objects returned by C<DBIx::Simple::OO>, as also 
+C<DBIx::Simple::OO::Item> class to extend the functionality
+of the objects returned by C<DBIx::Simple::OO>, as also
 described in the C<SYNOPSIS>
 
 =cut
@@ -140,6 +140,6 @@ This module by Jos Boumans E<lt>kane@cpan.orgE<gt>.
 
 =head1 COPYRIGHT
 
-This library is free software; you may redistribute and/or modify it 
+This library is free software; you may redistribute and/or modify it
 under the same terms as Perl itself.
 =cut
